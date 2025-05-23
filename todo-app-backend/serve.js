@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
     res.send('Todo App Backend API is running!')
 })
 
-app.use('/api/users', userRoutes);
+app.use('/api', userRoutes);
 app.use('/api/todos', todoRoutes);
 
 
