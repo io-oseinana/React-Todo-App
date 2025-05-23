@@ -5,8 +5,6 @@ This is a simple Todo app built with Vite, React, and TypeScript, and MongoDB. I
 ## Features
 - User authentication
 - CRUD operations for todos
-- Responsive design
-- Dark mode support
 - Real-time updates
 
 ## Technologies Used
