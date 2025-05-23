@@ -1,7 +1,7 @@
-import authService from "../services/authService.ts";
 import {create} from "zustand/react";
-import type {AuthState, LoginData, RegisterData, User,} from "../types/UserData.ts";
 import axios from "axios";
+import authService from "@/features/auth/services/authService.ts";
+import type {AuthState, LoginData, RegisterData, User} from "@/features/auth/types/auth.ts";
 
 
 const getUserFromLocalStorage = (): User | null => {
@@ -51,7 +51,7 @@ const useAuthStore = create<AuthState>((set) => ({
             const user = await authService.login(userData);
             set({user, isLoading: false})
             return user;
-        }  catch (error: unknown) {
+        } catch (error: unknown) {
             let message: string = 'An unexpected error occurred';
             if (axios.isAxiosError(error)) {
                 if (error.response && error.response.data && error.response.data.message) {
@@ -64,7 +64,7 @@ const useAuthStore = create<AuthState>((set) => ({
             } else if (typeof error === 'string') {
                 message = error;
             }
-            set({ isLoading: false, error: message });
+            set({isLoading: false, error: message});
             throw error;
         }
     },

@@ -1,5 +1,5 @@
 import api from '../../../services/api';
-import type {LoginData, RegisterData,} from "../types/UserData.ts";
+import type {LoginData, RegisterData,} from "../types/auth.ts";
 
 
 const register = async (userData: RegisterData) => {
