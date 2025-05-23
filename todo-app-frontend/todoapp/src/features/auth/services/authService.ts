@@ -3,7 +3,7 @@ import type {LoginData, RegisterData,} from "../types/auth.ts";
 
 
 const register = async (userData: RegisterData) => {
-    const response = await api.post('/users/register', userData);
+    const response = await api.post('/register', userData);
 
     if (response.data) {
         localStorage.setItem('user', JSON.stringify(response.data));
@@ -12,7 +12,7 @@ const register = async (userData: RegisterData) => {
 };
 
 const login = async (userData: LoginData) => {
-    const response = await api.post('/users/login', userData);
+    const response = await api.post('/login', userData);
 
     if (response.data) {
         localStorage.setItem('user', JSON.stringify(response.data));
